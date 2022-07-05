@@ -22,19 +22,19 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
 }
 
 int main() {
-  /*warning leve limit check */
+  /*warning level limit check */
   assert(batteryIsOk(2.25,24,0.04));
   assert(batteryIsOk(42.75,76,0.76));
   /*error limit check */
   assert(batteryIsOk(0,20,0));
   assert(batteryIsOk(45,80,0.8));
-  /*check warning if level more than Upper& less than lower */
+  /*check warning if level more than Upper& less than lower limits*/
   assert(batteryIsOk(43,77,0.77));
   assert(batteryIsOk(2,23,.03));
-  /*check error if level more than Upper& less than lower */
+  /*check error if level more than Upper& less than lower limits */
   assert(!batteryIsOk(-1,19,0));
   assert(!batteryIsOk(46,82,0.9));
-  /*any one parameter breach */
+  /*test any one parameter breach */
   assert(!batteryIsOk(50,30,0.5));
   assert(!batteryIsOk(40,85,0.6));
   assert(!batteryIsOk(43,40,0.9));
