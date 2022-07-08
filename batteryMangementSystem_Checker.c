@@ -11,7 +11,7 @@ int batteryIsOk(float temperature, float soc, float chargeRate) {
 	temperatureStatus=IsTemperatureOk(temperature);
 	SocStatus=IsSocOk(soc);
 	ChargeRateStatus=IsChargeRateOk(chargeRate);
-	int IsBattaeryOkValue=(temperatureStatus&SocStatus&ChargeRateStatus);
+	int IsBattaeryOkValue=(temperatureStatus&&SocStatus&&ChargeRateStatus);
     if(IsBattaeryOkValue)
 	{
 		printWarningMessage(temperatureData_st.warningLevel,temperatureData_st.parameterValue,BmsPrameters[0]);
