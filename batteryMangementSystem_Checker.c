@@ -5,13 +5,7 @@
 char* BmsPrameters[] = {"Temperature", "State of Charge", "Charging Rate"};
 
 int batteryIsOk(float temperature, float soc, float chargeRate) {
-	int temperatureStatus=0;
-	int SocStatus=0;
-	int ChargeRateStatus=0;
-	temperatureStatus=IsTemperatureOk(temperature);
-	SocStatus=IsSocOk(soc);
-	ChargeRateStatus=IsChargeRateOk(chargeRate);
-	int IsBattaeryOkValue=(temperatureStatus&SocStatus&ChargeRateStatus);
+    int IsBattaeryOkValue=(IsTemperatureOk(temperature)&&IsSocOk(soc)&&IsChargeRateOk(chargeRate));
     if(IsBattaeryOkValue)
 	{
 		printWarningMessage(temperatureData_st.warningLevel,temperatureData_st.parameterValue,BmsPrameters[0]);
