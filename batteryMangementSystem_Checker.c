@@ -3,16 +3,19 @@
 #include "BmsData.h"
 
 char* BmsPrameters[] = {"Temperature", "State of Charge", "Charging Rate"};
-
-int batteryIsOk(float temperature, float soc, float chargeRate) {
-    int IsBattaeryOkValue=(IsTemperatureOk(temperature)&&IsSocOk(soc)&&IsChargeRateOk(chargeRate));
-    if(IsBattaeryOkValue)
+void printWarning(int warningStatus)
+{
+	if(warningStatus)
 	{
 		printWarningMessage(temperatureData_st.warningLevel,temperatureData_st.parameterValue,BmsPrameters[0]);
 		printWarningMessage(SocData_st.warningLevel,SocData_st.parameterValue,BmsPrameters[1]);
 		printWarningMessage(ChargeRateData_st.warningLevel,ChargeRateData_st.parameterValue,BmsPrameters[2]);
 	}
-	return(IsBattaeryOkValue);
+}
+int batteryIsOk(float temperature, float soc, float chargeRate) {
+   int IsBattaeryOkValue=(IsTemperatureOk(temperature)&&IsSocOk(soc)&&IsChargeRateOk(chargeRate));
+   printWarning(IsBattaeryOkValue);
+   return(IsBattaeryOkValue);
 }
 
 int main() {
