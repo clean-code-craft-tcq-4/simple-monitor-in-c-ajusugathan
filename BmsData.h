@@ -1,3 +1,5 @@
+#include "language.h"
+
 #define CALCULATE_TOLERANCE(x) (float)(x*(0.05))
 
 /*Threshold values*/
