@@ -1,3 +1,10 @@
+# Extensions Used in the activity
+Extension 1: Early Warning
++ Introduce a ‘warning’ level with a tolerance of 5% of the upper-limit.
+
+Extension 2:  Support a language in addition to English
++ Added German language in addition to English
+
 # Programming Paradigms
 
 Electric Vehicles have BMS - Battery Management Systems
