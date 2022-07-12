@@ -11,6 +11,6 @@ void printWarningMessage(int WarningLevel,float presentValue,char * parameterVal
 {
 	if(WarningLevel)
 	{
-		printf("%s %s %s %s \n",WARINING,parameterValue,WARNING_COMMENT,PRESENT_VALUE,presentValue);
+		printf("%s %s %s : %s %f\n",WARINING,parameterValue,WARNING_COMMENT,PRESENT_VALUE,presentValue);
 	}
 }
