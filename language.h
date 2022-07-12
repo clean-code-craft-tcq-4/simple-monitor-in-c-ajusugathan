@@ -1,4 +1,4 @@
-#define ENGLISH
+#define GERMAN
 
 #ifdef GERMAN
 
