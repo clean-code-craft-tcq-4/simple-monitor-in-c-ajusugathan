@@ -11,7 +11,7 @@ int IsTemperatureOk(float temperature)
 	temperatureData_st.warningLevel=valueRangeCheck(temperature,TEMPERATURE_WARNING_LEVEL_MINIMUM,TEMPERATURE_WARNING_LEVEL_MAXIMUM);
 	if(ErrorStatus)
 	{
-		printf(" !! ERROR !! Temperature %f is more than the threshold range \n",temperature);
+		printf(" %s %s %s : %s %f\n",ERROR,TEMPERATURE,ERROR_COMMENT,PRESENT_VALUE,temperature);
 	}
 	temperatureData_st.parameterValue=temperature;
 	return(!ErrorStatus);
