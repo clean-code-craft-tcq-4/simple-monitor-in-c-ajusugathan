@@ -12,7 +12,7 @@ int IsChargeRateOk(float chargeRate)
 	ChargeRateData_st.warningLevel=valueRangeCheck(chargeRate,CHARGERATE_WARNING_LEVEL_MINIMUM,CHARGERATE_WARNING_LEVEL_MAXIMUM);
 	if(ErrorStatus)
 	{
-		printf(" !! ERROR !! Charge Rate is %f is more than the threshold range \n",chargeRate);
+		printf(" %s %s %s : %s %f\n",ERROR,CHARGE_RATE,ERROR_COMMENT,PRESENT_VALUE,chargeRate);
 	}
     ChargeRateData_st.parameterValue=chargeRate;
 	return(!ErrorStatus);
