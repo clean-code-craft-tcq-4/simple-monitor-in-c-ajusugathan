@@ -12,7 +12,7 @@ int IsSocOk(float soc)
 	SocData_st.warningLevel=valueRangeCheck(soc,SOC_WARNING_LEVEL_MINIMUM,SOC_WARNING_LEVEL_MAXIMUM);
 	if(ErrorStatus)
 	{
-		printf(" !! ERROR !! State of Charge %f is more than the threshold range \n",soc);
+		printf(" %s %s %s : %s %f\n",ERROR,SOC,ERROR_COMMENT,PRESENT_VALUE,soc);;
 	}
 	SocData_st.parameterValue=soc;
 	return(!ErrorStatus);
