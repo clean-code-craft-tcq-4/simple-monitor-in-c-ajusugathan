@@ -2,14 +2,13 @@
 #include <assert.h>
 #include "BmsData.h"
 
-char* BmsPrameters[] = {"Temperature", "State of Charge", "Charging Rate"};
 void printWarning(int warningStatus)
 {
 	if(warningStatus)
 	{
-		printWarningMessage(temperatureData_st.warningLevel,temperatureData_st.parameterValue,BmsPrameters[0]);
-		printWarningMessage(SocData_st.warningLevel,SocData_st.parameterValue,BmsPrameters[1]);
-		printWarningMessage(ChargeRateData_st.warningLevel,ChargeRateData_st.parameterValue,BmsPrameters[2]);
+		printWarningMessage(temperatureData_st.warningLevel,temperatureData_st.parameterValue,TEMPERATURE);
+		printWarningMessage(SocData_st.warningLevel,SocData_st.parameterValue,SOC);
+		printWarningMessage(ChargeRateData_st.warningLevel,ChargeRateData_st.parameterValue,CHARGE_RATE);
 	}
 }
 int batteryIsOk(float temperature, float soc, float chargeRate) {
